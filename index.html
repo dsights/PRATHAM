@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratham Technologies | Enterprise AI Solutions & Data Labeling</title>
+    <!-- Fonts: Inter and Space Grotesk for a tech feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-black text-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="logo-icon me-2">
+                    <i class="fa-solid fa-cube text-primary"></i>
+                </div>
+                <div class="d-flex flex-column">
+                    <span class="fw-bold fs-5 tracking-tight logo-text">PRATHAM</span>
+                    <span class="text-uppercase tracking-widest text-muted" style="font-size: 0.6rem;">Technologies</span>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars text-light"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="data-labeling.html">Data Labeling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-glow rounded-pill px-4 py-2" href="#contact">Contact Sales</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center position-relative overflow-hidden">
+        <!-- Background Slideshow -->
+        <div class="hero-bg-slideshow position-absolute w-100 h-100 top-0 start-0 z-0">
+            <div class="hero-slide slide-1"></div>
+            <div class="hero-slide slide-2"></div>
+            <div class="hero-slide slide-3"></div>
+            <div class="hero-slide slide-4"></div>
+        </div>
+        <canvas id="hero-canvas" class="position-absolute w-100 h-100 top-0 start-0 z-1"></canvas>
+        <div class="hero-gradient-overlay position-absolute w-100 h-100 top-0 start-0 z-2"></div>
+        <div class="container position-relative z-3">
+            <div class="row min-vh-100 align-items-center pt-5">
+                <div class="col-lg-8 col-xl-7 mx-auto text-center hero-content fade-up-element">
+                    <div class="badge rounded-pill badge-glass mb-4 px-3 py-2 border border-secondary text-primary">
+                        <span class="pulsing-dot d-inline-block me-2"></span> Next-Gen AI Consulting & Engineering
+                    </div>
+                    <h1 class="display-3 fw-bold mb-4 font-space-grotesk text-gradient">
+                        Architecting the<br>Intelligence Era.
+                    </h1>
+                    <p class="lead text-secondary mb-5 px-md-4">
+                        Pratham accelerates enterprise transformation through autonomous AI agents, precision data labeling, and scalable machine learning infrastructure.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <a href="#solutions" class="btn btn-primary btn-lg rounded-pill px-5 btn-glow-hover">Explore Solutions</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill px-5 glass-btn">Partner with Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="position-absolute bottom-0 start-50 translate-middle-x z-2 mb-4 scroll-indicator">
+            <i class="fa-solid fa-chevron-down text-secondary fs-4 animate-bounce"></i>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="py-5 border-bottom border-dark">
+        <div class="container">
+            <p class="text-center text-secondary text-uppercase tracking-widest fs-7 mb-4">Trusted by Innovative Enterprises</p>
+            <div class="d-flex justify-content-center flex-wrap gap-5 opacity-50 logos-container">
+                <!-- Placeholders for logos -->
+                <i class="fa-brands fa-aws fa-2x"></i>
+                <i class="fa-brands fa-google fa-2x"></i>
+                <i class="fa-brands fa-microsoft fa-2x"></i>
+                <i class="fa-brands fa-stripe fa-2x"></i>
+                <i class="fa-brands fa-slack fa-2x"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Solutions (Bento Grid) -->
+    <section id="solutions" class="py-6 py-xl-8 position-relative">
+        <div class="glow-blob bg-primary position-absolute top-50 start-0 translate-middle z-0" style="width: 40vw; height: 40vw; filter: blur(150px); opacity: 0.1;"></div>
+        <div class="container position-relative z-1">
+            <div class="text-center mb-5 fade-up-element">
+                <h2 class="h1 fw-bold font-space-grotesk">Enterprise Solutions</h2>
+                <p class="text-secondary col-md-8 mx-auto">End-to-end AI capabilities from strategy formulation to deployment and continuous optimization.</p>
+            </div>
+            
+            <div class="bento-grid">
+                <div class="bento-item glass-card p-4 p-lg-5 fade-up-element item-1">
+                    <div class="icon-box bg-primary-subtle text-primary rounded-3 mb-4 d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                        <i class="fa-solid fa-brain fs-3"></i>
+                    </div>
+                    <h3 class="h4 fw-bold mb-3">AI Consulting & Strategy</h3>
+                    <p class="text-secondary mb-4">We help you identify high-ROI use cases, assess readiness, and map out a strategic AI roadmap tailored to your industry.</p>
+                    <a href="services/ai-consulting.html" class="text-primary text-decoration-none fw-medium link-arrow">Learn more <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+                
+                <div class="bento-item glass-card p-4 p-lg-5 fade-up-element item-2 position-relative overflow-hidden">
+                    <div class="position-absolute end-0 bottom-0 opacity-25" style="transform: translate(20%, 20%);">
+                        <i class="fa-solid fa-network-wired" style="font-size: 15rem;"></i>
+                    </div>
+                    <div class="position-relative z-1">
+                        <div class="icon-box bg-info-subtle text-info rounded-3 mb-4 d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="fa-solid fa-robot fs-3"></i>
+                        </div>
+                        <h3 class="h4 fw-bold mb-3">Custom LLM Development & Agentic Workflows</h3>
+                        <p class="text-secondary">Fine-tuning, RAG pipelines, and deploying autonomous agents that interact with your enterprise data securely.</p>
+                        <a href="services/machine-learning.html" class="text-info text-decoration-none fw-medium link-arrow mt-3 d-inline-block">Discover LLMs <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="bento-item glass-card p-4 p-lg-5 fade-up-element item-3">
+                    <div class="icon-box bg-success-subtle text-success rounded-3 mb-4 d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                        <i class="fa-solid fa-database fs-3"></i>
+                    </div>
+                    <h3 class="h4 fw-bold mb-3">Data Engineering</h3>
+                    <p class="text-secondary mb-0">Building robust, scalable data pipelines and modern data stacks to fuel your AI initiatives.</p>
+                </div>
+                
+                <div class="bento-item glass-card p-4 p-lg-5 fade-up-element item-4 bg-gradient-dark border-primary-subtle border">
+                    <div class="d-flex justify-content-between align-items-start mb-4">
+                        <div class="icon-box bg-warning-subtle text-warning rounded-3 d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="fa-solid fa-tags fs-3"></i>
+                        </div>
+                        <span class="badge bg-primary rounded-pill px-3">Featured Service</span>
+                    </div>
+                    <h3 id="data-labeling" class="h4 fw-bold mb-3 text-white">Precision Data Labeling</h3>
+                    <p class="text-secondary mb-4">High-quality, human-in-the-loop data annotation services for computer vision, NLP, and audio at scale. Essential for training accurate foundation models.</p>
+                    <ul class="list-unstyled text-secondary mb-4 d-grid gap-2">
+                        <li><i class="fa-solid fa-check text-primary me-2"></i> Image & Video Annotation</li>
+                        <li><i class="fa-solid fa-check text-primary me-2"></i> Text Classification & NER</li>
+                        <li><i class="fa-solid fa-check text-primary me-2"></i> RLHF & Prompt Engineering</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline-primary rounded-pill w-100">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Showcase -->
+    <section id="products" class="py-6 py-xl-8 bg-darker border-top border-bottom border-dark position-relative overflow-hidden">
+        <div class="container position-relative z-1">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0 fade-up-element">
+                    <div class="badge rounded-pill bg-dark border border-secondary text-info px-3 py-2 mb-3">Our Platform</div>
+                    <h2 class="h1 fw-bold font-space-grotesk mb-4">Pratham AI Fabric</h2>
+                    <p class="lead text-secondary mb-4">A unified, enterprise-grade platform to build, deploy, and manage your AI assets securely across multi-cloud environments.</p>
+                    <ul class="list-unstyled mb-5">
+                        <li class="d-flex mb-3">
+                            <i class="fa-solid fa-shield-halved text-primary fs-4 me-3 mt-1"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Enterprise Security</h5>
+                                <p class="text-secondary small mb-0">SOC2 compliant, zero-trust architecture.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex mb-3">
+                            <i class="fa-solid fa-bolt text-warning fs-4 me-3 mt-1"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Low-Latency Inference</h5>
+                                <p class="text-secondary small mb-0">Optimized routing for real-time applications.</p>
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fa-solid fa-chart-pie text-success fs-4 me-3 mt-1"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Observability</h5>
+                                <p class="text-secondary small mb-0">Monitor model drift, costs, and performance.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary rounded-pill px-4">Request Demo</a>
+                </div>
+                <div class="col-lg-6 offset-lg-1 fade-up-element" style="transition-delay: 200ms;">
+                    <div class="position-relative">
+                        <div class="glow-blob bg-info position-absolute top-50 start-50 translate-middle z-0" style="width: 100%; height: 100%; filter: blur(80px); opacity: 0.2;"></div>
+                        <!-- UI Mockup Placeholder -->
+                        <div class="glass-card rounded-4 p-2 border border-secondary position-relative z-1 ui-mockup">
+                            <div class="bg-black rounded-3 overflow-hidden d-flex flex-column h-100 border border-dark">
+                                <!-- Mockup Header -->
+                                <div class="bg-dark p-2 d-flex align-items-center border-bottom border-secondary">
+                                    <div class="d-flex gap-1 me-3">
+                                        <div class="rounded-circle bg-danger" style="width: 10px; height: 10px;"></div>
+                                        <div class="rounded-circle bg-warning" style="width: 10px; height: 10px;"></div>
+                                        <div class="rounded-circle bg-success" style="width: 10px; height: 10px;"></div>
+                                    </div>
+                                    <div class="bg-black rounded-pill px-3 py-1 text-secondary small w-50 mx-auto text-center border border-secondary">fabric.pratham.au</div>
+                                </div>
+                                <!-- Mockup Content -->
+                                <div class="p-4 flex-grow-1 position-relative">
+                                    <div class="row h-100">
+                                        <div class="col-4 border-end border-secondary pe-3 d-flex flex-column gap-3">
+                                            <div class="bg-dark rounded p-2 opacity-50" style="height: 40px;"></div>
+                                            <div class="bg-dark rounded p-2 opacity-50" style="height: 40px;"></div>
+                                            <div class="bg-dark rounded p-2 opacity-50" style="height: 40px;"></div>
+                                            <div class="bg-dark rounded p-2 opacity-50" style="height: 40px;"></div>
+                                        </div>
+                                        <div class="col-8 ps-4">
+                                            <div class="d-flex justify-content-between mb-4">
+                                                <div class="bg-dark rounded w-25" style="height: 20px;"></div>
+                                                <div class="bg-primary rounded w-25" style="height: 20px;"></div>
+                                            </div>
+                                            <!-- Fake Graph -->
+                                            <div class="bg-dark rounded mb-4 d-flex align-items-end p-2 gap-2" style="height: 150px;">
+                                                <div class="bg-info rounded-top w-100" style="height: 40%;"></div>
+                                                <div class="bg-info rounded-top w-100" style="height: 60%;"></div>
+                                                <div class="bg-primary rounded-top w-100" style="height: 80%;"></div>
+                                                <div class="bg-info rounded-top w-100" style="height: 50%;"></div>
+                                                <div class="bg-info rounded-top w-100" style="height: 90%;"></div>
+                                                <div class="bg-primary rounded-top w-100" style="height: 100%;"></div>
+                                            </div>
+                                            <div class="row gap-3">
+                                                <div class="col bg-dark rounded p-3" style="height: 80px;"></div>
+                                                <div class="col bg-dark rounded p-3" style="height: 80px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="case-studies" class="py-6 py-xl-8 position-relative">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-end mb-5 fade-up-element">
+                <div>
+                    <h2 class="h1 fw-bold font-space-grotesk">Impact Delivered</h2>
+                    <p class="text-secondary mb-0">Real-world transformations powered by Pratham.</p>
+                </div>
+                <a href="case-studies.html" class="btn btn-outline-light rounded-pill mt-3 mt-md-0 glass-btn">View All Work</a>
+            </div>
+
+            <div class="row g-4">
+                <!-- Case Study 1 -->
+                <div class="col-md-6 col-xl-4 fade-up-element" style="transition-delay: 100ms;">
+                    <a href="case-studies/chatbot-financial-services.html" class="text-decoration-none">
+                        <div class="card h-100 glass-card case-card border-0 overflow-hidden bg-transparent">
+                            <div class="card-img-container overflow-hidden position-relative">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" class="card-img-top" alt="Finance">
+                                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+                                <span class="badge bg-dark text-light border border-secondary position-absolute top-0 end-0 m-3">Finance</span>
+                            </div>
+                            <div class="card-body p-4 position-relative z-1 bg-black">
+                                <h4 class="card-title fw-bold text-light mb-3">Next-Gen Financial Advisory AI</h4>
+                                <p class="card-text text-secondary mb-4">Developed a highly secure, fine-tuned LLM capable of analyzing complex financial portfolios and providing real-time insights.</p>
+                                <div class="d-flex align-items-center text-primary fw-medium arrow-link">Read Case Study <i class="fa-solid fa-arrow-right ms-2 transition-transform"></i></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Case Study 2 -->
+                <div class="col-md-6 col-xl-4 fade-up-element" style="transition-delay: 200ms;">
+                    <a href="case-studies/automating-claims-insurance.html" class="text-decoration-none">
+                        <div class="card h-100 glass-card case-card border-0 overflow-hidden bg-transparent">
+                            <div class="card-img-container overflow-hidden position-relative">
+                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" class="card-img-top" alt="Insurance">
+                                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+                                <span class="badge bg-dark text-light border border-secondary position-absolute top-0 end-0 m-3">Insurance</span>
+                            </div>
+                            <div class="card-body p-4 position-relative z-1 bg-black">
+                                <h4 class="card-title fw-bold text-light mb-3">Automated Claims Processing Pipeline</h4>
+                                <p class="card-text text-secondary mb-4">Leveraged computer vision and OCR to extract data from damage reports, reducing processing time by 85%.</p>
+                                <div class="d-flex align-items-center text-primary fw-medium arrow-link">Read Case Study <i class="fa-solid fa-arrow-right ms-2 transition-transform"></i></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Case Study 3 -->
+                <div class="col-md-6 col-xl-4 fade-up-element" style="transition-delay: 300ms;">
+                    <a href="case-studies/ai-real-estate-investment.html" class="text-decoration-none">
+                        <div class="card h-100 glass-card case-card border-0 overflow-hidden bg-transparent">
+                            <div class="card-img-container overflow-hidden position-relative">
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" class="card-img-top" alt="Real Estate">
+                                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"></div>
+                                <span class="badge bg-dark text-light border border-secondary position-absolute top-0 end-0 m-3">Real Estate</span>
+                            </div>
+                            <div class="card-body p-4 position-relative z-1 bg-black">
+                                <h4 class="card-title fw-bold text-light mb-3">Predictive Market Valuation Model</h4>
+                                <p class="card-text text-secondary mb-4">Built a machine learning engine using vast geospatial and demographic datasets to predict property value trends with 94% accuracy.</p>
+                                <div class="d-flex align-items-center text-primary fw-medium arrow-link">Read Case Study <i class="fa-solid fa-arrow-right ms-2 transition-transform"></i></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles & Insights -->
+    <section id="insights" class="py-6 py-xl-8 bg-darker border-top border-dark">
+    <div class="container">
+        <h2 class="h1 fw-bold font-space-grotesk mb-5 text-center fade-up-element">Latest Insights</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 fade-up-element" style="transition-delay: 100ms;">
+                <a href="articles/evolution-of-llms-2026.html" class="text-decoration-none d-block group h-100">
+                    <div class="card glass-card h-100 bg-transparent border-secondary overflow-hidden">
+                        <div class="card-img-container overflow-hidden" style="height: 200px;">
+                            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="The Evolution of Large Language Models: From GPT-3 to Next-Gen Architectures" style="transition: transform 0.5s ease;">
+                        </div>
+                        <div class="card-body p-4 bg-black">
+                            <div class="text-secondary small mb-3 d-flex align-items-center"><i class="fa-regular fa-calendar me-2"></i> April 8, 2026</div>
+                            <h4 class="fw-bold text-light mb-3 group-hover-text-primary transition-colors fs-5">The Evolution of Large Language Models: From GPT-3 to Next-Gen Architectures</h4>
+                            <p class="text-secondary mb-0 small">An in-depth analysis of how LLMs have evolved, exploring transformer architectures, sparse expert models, and the path to AGI.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up-element" style="transition-delay: 200ms;">
+                <a href="articles/gen-ai-in-healthcare-2026.html" class="text-decoration-none d-block group h-100">
+                    <div class="card glass-card h-100 bg-transparent border-secondary overflow-hidden">
+                        <div class="card-img-container overflow-hidden" style="height: 200px;">
+                            <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Generative AI in Healthcare: Revolutionizing Drug Discovery and Patient Care" style="transition: transform 0.5s ease;">
+                        </div>
+                        <div class="card-body p-4 bg-black">
+                            <div class="text-secondary small mb-3 d-flex align-items-center"><i class="fa-regular fa-calendar me-2"></i> April 5, 2026</div>
+                            <h4 class="fw-bold text-light mb-3 group-hover-text-primary transition-colors fs-5">Generative AI in Healthcare: Revolutionizing Drug Discovery and Patient Care</h4>
+                            <p class="text-secondary mb-0 small">Discover how generative models are shortening drug discovery timelines and providing highly personalized patient care plans.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 fade-up-element" style="transition-delay: 300ms;">
+                <a href="articles/autonomous-agents-enterprise.html" class="text-decoration-none d-block group h-100">
+                    <div class="card glass-card h-100 bg-transparent border-secondary overflow-hidden">
+                        <div class="card-img-container overflow-hidden" style="height: 200px;">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Autonomous Agents: The Future of Enterprise Workflow Automation" style="transition: transform 0.5s ease;">
+                        </div>
+                        <div class="card-body p-4 bg-black">
+                            <div class="text-secondary small mb-3 d-flex align-items-center"><i class="fa-regular fa-calendar me-2"></i> April 2, 2026</div>
+                            <h4 class="fw-bold text-light mb-3 group-hover-text-primary transition-colors fs-5">Autonomous Agents: The Future of Enterprise Workflow Automation</h4>
+                            <p class="text-secondary mb-0 small">How multi-agent systems are moving beyond basic automation to handle complex, multi-step enterprise workflows.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+        <div class="text-center mt-5 mb-4 fade-up-element">
+            <a href="insights.html" class="btn btn-outline-primary rounded-pill px-4 btn-glow-hover">
+                Explore More <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-7 position-relative overflow-hidden">
+        <div class="glow-blob bg-primary position-absolute top-50 start-50 translate-middle z-0" style="width: 80vw; height: 80vw; filter: blur(200px); opacity: 0.15;"></div>
+        <div class="container position-relative z-1">
+            <div class="glass-card rounded-5 p-5 p-xl-7 text-center border border-secondary shadow-lg">
+                <h2 class="display-5 fw-bold font-space-grotesk mb-4 text-gradient">Ready to build the future?</h2>
+                <p class="lead text-secondary mx-auto mb-5" style="max-width: 600px;">
+                    Whether you need a custom foundational model, specialized data labeling, or strategic AI consulting, our experts are ready to engage.
+                </p>
+                <form class="mx-auto" style="max-width: 500px;">
+                    <div class="input-group input-group-lg mb-3 glass-input-group rounded-pill p-1">
+                        <input type="email" class="form-control border-0 bg-transparent text-light shadow-none ps-4" placeholder="Enter your work email" aria-label="Work email">
+                        <button class="btn btn-primary rounded-pill px-4" type="button">Get Started</button>
+                    </div>
+                    <p class="text-secondary small mt-3">We respect your privacy. No spam, ever.</p>
+                </form>
+            
+            </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-5 border-top border-dark">
+        <div class="container">
+            <div class="row gy-4 mb-5">
+                <div class="col-lg-4 pe-lg-5">
+                    <a class="d-flex align-items-center text-decoration-none mb-4" href="#">
+                        <div class="logo-icon me-2" style="width: 30px; height: 30px;">
+                            <i class="fa-solid fa-cube text-primary"></i>
+                        </div>
+                        <span class="fw-bold fs-5 tracking-tight text-light">PRATHAM</span>
+                    </a>
+                    <p class="text-secondary small mb-4">Empowering enterprises with autonomous AI, scalable machine learning solutions, and precision data labeling.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-secondary hover-text-primary transition-colors"><i class="fa-brands fa-twitter fs-5"></i></a>
+                        <a href="#" class="text-secondary hover-text-primary transition-colors"><i class="fa-brands fa-linkedin fs-5"></i></a>
+                        <a href="#" class="text-secondary hover-text-primary transition-colors"><i class="fa-brands fa-github fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="text-light fw-bold mb-3 text-uppercase fs-7 tracking-wider">Solutions</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                        <li><a href="#" class="text-secondary text-decoration-none hover-text-light transition-colors small">AI Consulting</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-text-light transition-colors small">Custom LLMs</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-text-light transition-colors small">Data Engineering</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-text-light transition-colors small">Data Labeling</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="text-light fw-bold mb-3 text-uppercase fs-7 tracking-wider">Company</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                        <li><a href="#" class="text-secondary text-decoration-none hover-text-light transition-colors small">About Us</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-text-light transition-colors small">Careers</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-text-light transition-colors small">Contact</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-text-light transition-colors small">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="text-light fw-bold mb-3 text-uppercase fs-7 tracking-wider">Connect</h6>
+                    <p class="text-secondary small font-monospace mb-0">
+                        connect@pratham.au
+                    </p>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center pt-4 border-top border-dark">
+                <p class="text-secondary small mb-3 mb-md-0">&copy; 2026 Pratham Technologies Pty Ltd. All Rights Reserved.</p>
+                <div class="d-flex gap-3 small">
+                    <a href="#" class="text-secondary text-decoration-none hover-text-light transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-secondary text-decoration-none hover-text-light transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Three.js for background animation (optional, but requested modern animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

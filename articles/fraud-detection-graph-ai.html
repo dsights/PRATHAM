@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratham Technologies | Enterprise AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-black text-light pt-5 mt-5">
+
+        <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="logo-icon me-2">
+                    <i class="fa-solid fa-cube text-primary"></i>
+                </div>
+                <div class="d-flex flex-column">
+                    <span class="fw-bold fs-5 tracking-tight logo-text">PRATHAM</span>
+                    <span class="text-uppercase tracking-widest text-muted" style="font-size: 0.6rem;">Technologies</span>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars text-light"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="../solutions.html">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../data-labeling.html">Data Labeling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../case-studies.html">Case Studies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../insights.html">Insights</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-glow rounded-pill px-4 py-2" href="#contact">Contact Sales</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5 mt-5">
+        <div class="container">
+            <article>
+                    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="logo-icon me-2">
+                    <i class="fa-solid fa-cube text-primary"></i>
+                </div>
+                <div class="d-flex flex-column">
+                    <span class="fw-bold fs-5 tracking-tight logo-text">PRATHAM</span>
+                    <span class="text-uppercase tracking-widest text-muted" style="font-size: 0.6rem;">Technologies</span>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars text-light"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="../solutions.html">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../data-labeling.html">Data Labeling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../case-studies.html">Case Studies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../insights.html">Insights</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-glow rounded-pill px-4 py-2" href="#contact">Contact Sales</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h2 class="section-heading">1. System Architecture Overview</h2>
+                        <p>Financial fraud is rarely an isolated event. It involves networks of accounts. This architecture uses a Graph Database (Neo4j) combined with a GNN (Graph Neural Network) to detect "Money Mules" and "Synthetic Identities" in milliseconds.</p>
+
+                        <h3>Component Breakdown:</h3>
+                        <ul>
+                            <li><strong>API Gateway:</strong> Validates and sanitizes transaction requests.</li>
+                            <li><strong>Transaction Pipeline:</strong> Kafka topics for "Raw Transactions," "Enriched Data," and "Fraud Scores."</li>
+                            <li><strong>Feature Engine:</strong> Flink jobs calculating rolling window stats (e.g., transaction frequency last 10 mins).</li>
+                            <li><strong>Graph Store:</strong> Neo4j cluster storing entities (Users, Cards, IPs, Devices) and relationships (Transacted_With, Logged_In_From).</li>
+                            <li><strong>GNN Inference:</strong> Python-based service using PyTorch Geometric for embedding generation.</li>
+                        </ul>
+
+                        <h2 class="section-heading">2. Problem Statement</h2>
+                        <p>Traditional fraud detection relies on "if-then" rules which are easily bypassed by sophisticated gangs.</p>
+                        <ul>
+                            <li><strong>Data Silos:</strong> Rule engines often look at one transaction at a time, missing the "big picture" of relationship hops.</li>
+                            <li><strong>Speed:</strong> Detecting a fraud ring after the money has left the bank is useless; detection must happen "in-flight."</li>
+                            <li><strong>Evolving Tactics:</strong> Fraudsters change patterns weekly, making static rules obsolete.</li>
+                        </ul>
+
+                        <h2 class="section-heading">3. Engineering Approach to Solve the Problem</h2>
+                        <ul>
+                            <li><strong>Graph-Native Features:</strong> Instead of just "Transaction Amount," we extract "Degree Centrality" (how many accounts is this IP connected to?) and "PageRank" of the account.</li>
+                            <li><strong>In-Memory Graph Processing:</strong> Use a read-replica of the graph in memory for sub-10ms traversal during the transaction flow.</li>
+                            <li><strong>Asynchronous Enrichment:</strong> Transactions are authorized based on high-level risk, while a secondary "Deep Audit" happens in parallel to freeze funds if high-risk graph patterns are found.</li>
+                        </ul>
+
+                        <h2 class="section-heading">4. The AI Advantage Used</h2>
+                        <ul>
+                            <li><strong>GNN (Graph Neural Networks):</strong> These models learn "neighborhood" embeddings. A user might look normal, but if they are 2 hops away from a known fraudster, the GNN increases the risk score based on the network topology.</li>
+                            <li><strong>Self-Supervised Learning:</strong> Since labels (confirmed fraud) are rare, we use contrastive learning to group "unusual" behaviors together for human review.</li>
+                        </ul>
+
+                        <h2 class="section-heading">5. Architecture Flowchart Diagram</h2>
+                        <pre><code>
+[ Transaction Request ]
+       |
+       v
+[ API Gateway ]
+       |
+       +----> [ Rule Engine ] (Quick Check)
+       |
+       v (Publish to Kafka)
+[ Kafka Consumer ]
+       |
+       +----> [ Neo4j Graph ] (Query Relations)
+       |           ^
+       |           |
+       v           |
+[ GNN Inference ]--+ (Update Graph Embeddings)
+       |
+       v
+[ Risk Score Topic ] ----> [ Payment Gateway ] (Approve/Deny)
+                        </code></pre>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+        <footer class="bg-black py-5 border-top border-dark mt-auto">
+        <div class="container">
+            <div class="row gy-4 mb-5">
+                <div class="col-lg-4 pe-lg-5">
+                    <a class="d-flex align-items-center text-decoration-none mb-4" href="../index.html">
+                        <div class="logo-icon me-2" style="width: 30px; height: 30px;">
+                            <i class="fa-solid fa-cube text-primary"></i>
+                        </div>
+                        <span class="fw-bold fs-5 tracking-tight text-light">PRATHAM</span>
+                    </a>
+                    <p class="text-secondary small mb-4">Empowering enterprises with autonomous AI, scalable machine learning solutions, and precision data labeling.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="text-light fw-bold mb-3 text-uppercase fs-7 tracking-wider">Connect</h6>
+                    <p class="text-secondary small font-monospace mb-0">
+                        connect@pratham.au
+                    </p>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center pt-4 border-top border-dark">
+                <p class="text-secondary small mb-3 mb-md-0">&copy; 2026 Pratham Technologies Pty Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
