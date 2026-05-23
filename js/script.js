@@ -11,24 +11,118 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Intersection Observer for Scroll Animations ---
     const fadeUpElements = document.querySelectorAll('.fade-up-element');
-    
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Stop observing once visible
+                obs.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
     fadeUpElements.forEach(element => {
         observer.observe(element);
+    });
+
+    // --- CountUp Animation ---
+    function animateCountUp(el) {
+        const raw = el.dataset.target || '0';
+        const target = parseFloat(raw);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        const duration = 2200;
+        const startTime = performance.now();
+
+        function update(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = target * eased;
+
+            let display;
+            if (!Number.isInteger(target)) {
+                display = current.toFixed(1);
+            } else if (target >= 1000) {
+                display = Math.floor(current).toLocaleString();
+            } else {
+                display = Math.floor(current).toString();
+            }
+            el.textContent = prefix + display + suffix;
+
+            if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+    }
+
+    const statEls = document.querySelectorAll('.stat-number[data-target]');
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCountUp(entry.target);
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    statEls.forEach(el => statsObserver.observe(el));
+
+    // --- Typed Text Animation ---
+    const typedEl = document.getElementById('typed-text');
+    if (typedEl) {
+        const phrases = [
+            'Autonomous AI Agents',
+            'Multi-Modal Intelligence',
+            'Enterprise LLM Platforms',
+            'Agentic RAG Pipelines',
+            'AI Governance Frameworks',
+            'Computer Vision Systems',
+            'Precision Data Labeling',
+            'Responsible AI Solutions'
+        ];
+        let phraseIdx = 0, charIdx = 0, deleting = false;
+
+        function typeLoop() {
+            const phrase = phrases[phraseIdx];
+            if (deleting) {
+                typedEl.textContent = phrase.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typedEl.textContent = phrase.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let delay = deleting ? 45 : 75;
+            if (!deleting && charIdx === phrase.length) {
+                delay = 2200;
+                deleting = true;
+            } else if (deleting && charIdx === 0) {
+                deleting = false;
+                phraseIdx = (phraseIdx + 1) % phrases.length;
+                delay = 400;
+            }
+            setTimeout(typeLoop, delay);
+        }
+        setTimeout(typeLoop, 1200);
+    }
+
+    // --- Industry Tab Switching ---
+    const tabBtns = document.querySelectorAll('.industry-tab-btn');
+    const tabPanels = document.querySelectorAll('.industry-panel');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabPanels.forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            const panel = document.getElementById(btn.dataset.target);
+            if (panel) panel.classList.add('active');
+        });
     });
 
     // --- Three.js Hero Background (Particles) ---
